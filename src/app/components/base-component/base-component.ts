@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../../shared/services/backend.service';
 
 @Component({
@@ -9,7 +9,10 @@ import { BackendService } from '../../shared/services/backend.service';
 export class BaseComponent {
     posts: any;
     constructor(private backendService: BackendService) {
-        backendService.fetchPost().subscribe(data => {
+    }
+    ngOnInit() {
+        this.backendService.fetchPostServiceBased();
+        this.backendService.fetchPost().subscribe(data => {
             this.posts = data;
         });
     }

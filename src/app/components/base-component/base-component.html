@@ -1,4 +1,8 @@
-<p>Posts</p>
+<p>Posts Service based</p>
+<div *ngFor= "let item of backendService.posts">
+    <p>{{item.id}}: {{item.title}}</p>
+</div>
+<p>Posts Obserable based</p>
 <div *ngFor= "let item of posts">
     <p>{{item.id}}: {{item.title}}</p>
 </div>
